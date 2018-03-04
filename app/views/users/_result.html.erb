@@ -24,8 +24,12 @@
 				<td><%= @weather["temp_current"] %></td>
 				<td><%= @weather["temp_high"]%></td>
 				<td><%= @weather["temp_low"] %></td>
-				<td><%= link_to "Add To My Locations", user_locations_path(user: current_user, city: @location.city, 
+				<% if !current_user.has_location?(@location.city, @location.region) %>
+					<td><%= link_to "Add To My Locations", user_locations_path(user: current_user, city: @location.city, 
 									region: @location.region), class: "btn btn-xs btn-success", method: :post %> </td>
+				<% else %>
+					<td><span>Already Added</span></td>
+				<% end %>
 			</tr>
 		</tbody>
 	<table>

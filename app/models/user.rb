@@ -5,4 +5,8 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
+  def has_location?(city, region)
+		user_locations.joins(:location).where(locations: { city: city, region: region }).count > 0
+	end
 end

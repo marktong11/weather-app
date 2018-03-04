@@ -72,5 +72,4 @@ class Location < ApplicationRecord
 		(looked_up_location["query"]["results"]["channel"]["item"]["forecast"][0]["high"].to_f + 
 			looked_up_location["query"]["results"]["channel"]["item"]["forecast"][0]["low"].to_f) / 2
 	end
-
 end
