@@ -1,0 +1,26 @@
+<h1>Seach Locations</h1>
+
+<%= form_tag search_locations_path, remote: true, method: :get, id: "location-lookup-form" do %>
+	<div class="form-group row no-padding text-center col-md-12">
+	  <div class="col-md-10">
+	  	<%= text_field_tag :search_param, params[:search_param], placeholder: "Search City, State, Zip", autofocus: true, class:"form-control search-box input-lg" %>
+	  </div>
+	  <div class="col-md-2">
+	  	<%= button_tag(type: :submit, class: "btn btn-lg btn-success") do %>
+	  		Search
+	  	<% end %>
+	  </div>
+	</div>
+<% end %>
+
+<div id="results">
+  <%= render 'result' %>
+</div>
+
+<div id="my-locations">
+  <%= render 'locations/list' %>
+</div>
+
+<div id="weather">
+  <%= render 'locations/weather' %>
+</div>

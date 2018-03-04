@@ -1,0 +1,28 @@
+<h1>My Locations</h1>
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>City</th>
+			<th>Region</th>
+			<th>Country</th>
+			<% if @user.id = current_user.id%>
+				<th>Actions</th>
+			<% end %>
+		</tr>
+	</thead>
+	<tbody>
+		<% @user_locations.each do |user_location| %>
+			<tr>
+				<td><%= user_location.city %></td>
+				<td><%= user_location.region %></td>
+				<td><%= user_location.country %></td>
+				<% if @user.id = current_user.id%>
+					<td>
+					<%= link_to "Delete", user_location_path(user_location), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-xs btn-danger" %>
+					<%= link_to "View", search_weather_path(:city => user_location.city, :region => user_location.region), params: user_location.city, class: "btn btn-xs btn-success", remote: true %>
+					</td>
+				<% end %>
+			</tr>
+		<% end %>
+	</tbody>
+<table>

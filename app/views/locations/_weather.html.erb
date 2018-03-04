@@ -1,0 +1,7 @@
+<% if @location && @weather %>
+	<h3>Weather for: <%= @location.city %>, <%=@location.region %> <%= @location.country %></h3>
+	<div>Current: <%= @weather["temp_current"] %></div>
+	<div>High: <%= @weather["temp_high"]%></div>
+	<div>Low: <%= @weather["temp_low"] %></div>
+	<div>Average: <%= @weather["temp_average"] %></div>
+<% end %>

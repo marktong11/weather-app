@@ -1,0 +1,34 @@
+<div class="results-block">
+  <%= bootstrap_flash %>
+</div>
+
+<% if @location && @weather%>
+	<h1>Search Result</h1>
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>City</th>
+				<th>Region</th>
+				<th>Zip</th>
+				<th>Temperature</th>
+				<th>High</th>
+				<th>Low</th>
+				<th>Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><%= @location.city %></td>
+				<td><%= @location.region %></td>
+				<td><%= @location.country %></td>
+				<td><%= @weather["temp_current"] %></td>
+				<td><%= @weather["temp_high"]%></td>
+				<td><%= @weather["temp_low"] %></td>
+				<td><%= link_to "Add To My Locations", user_locations_path(user: current_user, city: @location.city, 
+									region: @location.region), class: "btn btn-xs btn-success", method: :post %> </td>
+			</tr>
+		</tbody>
+	<table>
+<% end %>
+
+	
