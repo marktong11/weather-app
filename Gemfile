@@ -38,7 +38,6 @@ gem 'devise'
 gem 'twitter-bootstrap-rails'
 gem 'jquery-rails'
 gem 'devise-bootstrap-views'
-gem 'pg', '~> 0.18.4'
 
 group :development, :test do
 	# Use sqlite3 as the database for Active Record
@@ -56,6 +55,7 @@ group :development do
 end
 
 group :production do
+  gem 'pg'
   gem 'rails_12factor'
 end
 

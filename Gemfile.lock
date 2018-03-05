@@ -142,7 +142,7 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     rake (12.3.0)
-    rb-fsevent (0.10.2)
+    rb-fsevent (0.10.3)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
     responders (2.4.0)
@@ -213,7 +213,7 @@ DEPENDENCIES
   devise-bootstrap-views
   jbuilder (~> 2.5)
   jquery-rails
-  pg (~> 0.18.4)
+  pg
   puma (~> 3.7)
   rails (~> 5.1.5)
   rails_12factor
